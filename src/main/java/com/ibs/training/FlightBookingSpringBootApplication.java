@@ -1,4 +1,4 @@
-package com.ibs.training.FlightBookingSpringBoot;
+package com.ibs.training;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
