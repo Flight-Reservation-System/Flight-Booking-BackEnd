@@ -20,8 +20,7 @@ public class Flight {
 	@Column(name="flightName")
 	private String flightName;
 	
-	@Column(name="Date")
-	private String Date;
+	
 	
 	@Column(name="sourceAirport")
 	private String sourceAirport;
@@ -44,6 +43,33 @@ public class Flight {
 	@Column(name="price")
 	private int  price;
 	
+	@Column(name="arrivalDate")
+	private Date arrivalDate;
+	
+	@Column(name="depatureDate")
+	private Date depatureDate;
+	
+	@Column(name="distance")
+	private long distance;
+	
+	public long getDistance() {
+		return distance;
+	}
+	public void setDistance(long distance) {
+		this.distance = distance;
+	}
+	public Date getArrivalDate() {
+		return arrivalDate;
+	}
+	public void setArrivalDate(Date arrivalDate) {
+		this.arrivalDate = arrivalDate;
+	}
+	public Date getDepatureDate() {
+		return depatureDate;
+	}
+	public void setDepatureDate(Date depatureDate) {
+		this.depatureDate = depatureDate;
+	}
 	public int getPrice() {
 		return price;
 	}
@@ -63,12 +89,7 @@ public class Flight {
 		this.flightName = flightName;
 	}
 	
-	public String getDate() {
-		return Date;
-	}
-	public void setDate(String date) {
-		Date = date;
-	}
+	
 	public int getDepartureHour() {
 		return departureHour;
 	}
@@ -105,13 +126,7 @@ public class Flight {
 	public void setDestinationAirport(String destinationAirport) {
 		this.destinationAirport = destinationAirport;
 	}
-	@Override
-	public String toString() {
-		return "Flight [flightId=" + flightId + ", flightName=" + flightName + ", Date=" + Date + ", sourceAirport="
-				+ sourceAirport + ", destinationAirport=" + destinationAirport + ", departureHour=" + departureHour
-				+ ", departureMinute=" + departureMinute + ", arrivalHour=" + arrivalHour + ", arrivalMinute="
-				+ arrivalMinute + ", price=" + price + "]";
-	}
+	
 
 
 	}
