@@ -27,52 +27,38 @@ import com.ibs.training.status.Status;
 @RequestMapping("/flight")
 public class FlightController {
 
-	@Autowired
-	private FlightDao flightdao;
 	
+
 	@Autowired
 	private FlightService flightService;
-	
+
 	@PostMapping("/addFlight")
 	public Status addFlight(@Valid @RequestBody Flight flight) {
 
-		System.out.println(flight.getArrivalDate());
 
-//		  List <Flight> flights = flightdao.findAll();
-//	        System.out.println("New flight: " + flight.toString());
-//	        for (Flight flightsall : flights) {
-//	            //System.out.println("Registered user: " + newUser.toString());
-//	            if (flight.equals(flightsall)) {
-//	                System.out.println("Flight Already exists!");
-//	                return Status.FLIGHT_ALREADY_EXISTS;
-//	            }
-//	        }
-
-		flightdao.save(flight);
+		flightService.saveFlight(flight);
 		return Status.SUCCESS;
 
 	}
 
 	@GetMapping("/viewFlight")
 	public List<Flight> getAllFlights() {
-		return flightdao.findAll();
+		return flightService.viewFlghts();
 	}
 
 	@DeleteMapping("/deleteFlight/{flightId}")
-
 	public Status removeFlight(@PathVariable("flightId") int Id) {
-		flightdao.deleteById(Id);
+		flightService.deleteFlight(Id);
 		return Status.DELETED;
 
 	}
-	
-	//To search flights by destination and source
-	
-		@GetMapping("/searchFlightByDestinationandSource/{destinationAirport}/{sourceAirport}")
-		public  List<FlightResponse> getFlightByDestination(@PathVariable String destinationAirport,@PathVariable String sourceAirport){
-			return flightService.searchFlight(destinationAirport,sourceAirport); 
-		}
-		
-		
-	
+
+	// To search flights by destination and source
+
+	@GetMapping("/searchFlightByDestinationandSource/{destinationAirport}/{sourceAirport}")
+	public List<FlightResponse> getFlightByDestination(@PathVariable String destinationAirport,
+			@PathVariable String sourceAirport) {
+		return flightService.searchFlight(destinationAirport, sourceAirport);
+	}
+
 }

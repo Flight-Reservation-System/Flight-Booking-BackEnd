@@ -81,5 +81,16 @@ public class FlightService {
 		
 		return result;
 	}
-
+	
+	public void deleteFlight(int flightId) {
+		flightdao.deleteById(flightId);
+	}
+	
+	public List<Flight> viewFlghts(){
+		return flightdao.findAll();
+	}
+	
+	public Flight saveFlight(Flight newFlight) {
+		return flightdao.save(newFlight);
+	}
 }

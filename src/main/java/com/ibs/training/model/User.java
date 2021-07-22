@@ -95,6 +95,22 @@ public class User {
 	}
 
 
+	public User(int userId,String fullName, String userName, String emailId, long phoneNumber, String password) {
+		super();
+		this.userId=userId;
+		this.fullName = fullName;
+		this.userName = userName;
+		this.emailId = emailId;
+		this.phoneNumber = phoneNumber;
+		this.password = password;
+	}
+
+
+	public User() {
+		super();
+	}
+	
+
 
 
 

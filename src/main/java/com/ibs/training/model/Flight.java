@@ -126,8 +126,28 @@ public class Flight {
 	public void setDestinationAirport(String destinationAirport) {
 		this.destinationAirport = destinationAirport;
 	}
+	public Flight(int flightId, String flightName, String sourceAirport, String destinationAirport, int departureHour,
+			int departureMinute, int arrivalHour, int arrivalMinute, int price, Date arrivalDate, Date depatureDate,
+			long distance) {
+		super();
+		this.flightId = flightId;
+		this.flightName = flightName;
+		this.sourceAirport = sourceAirport;
+		this.destinationAirport = destinationAirport;
+		this.departureHour = departureHour;
+		this.departureMinute = departureMinute;
+		this.arrivalHour = arrivalHour;
+		this.arrivalMinute = arrivalMinute;
+		this.price = price;
+		this.arrivalDate = arrivalDate;
+		this.depatureDate = depatureDate;
+		this.distance = distance;
+	}
+	public Flight() {
+		super();
+	}
 	
-
+	
 
 	}
 	
